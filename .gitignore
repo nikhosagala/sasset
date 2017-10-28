@@ -1,16 +1,45 @@
-# Ignore Play! working directory #
+# editor
+**/.idea/*
+**/.vscode/*
+**/.target/*
+**/.settings/*
+
+# os
+$RECYCLE.BIN/
+[Dd]esktop.ini
+
+# java
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.class
+
+# npm
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+**/node_modules/
+
+# play framework
 bin/
 /db
-.eclipse
 /lib/
 /logs/
 /modules
 /project/project
 /project/target
-/target
+**/target
 tmp/
-test-result
-server.pid
-*.eml
 /dist/
 .cache
+
+# angular
+public/ui/
+**/dist/
+coverage/

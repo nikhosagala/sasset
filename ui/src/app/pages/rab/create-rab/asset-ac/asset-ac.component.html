@@ -1,0 +1,67 @@
+<form>
+  <div class="row function-inputs" *ngIf="jenisPekerjaan === 'maintenance'">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="ID  Asset" class="form-control"/>
+    </div>
+  </div>
+  <div class="row function-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Function" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row capacity-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Capacity" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row unit-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Unit" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row merk-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Merk" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row series-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Series" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row quantity-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Quantity" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row type-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Type" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row vrfvrv-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="VRF/VRV" class="form-control"[disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row aircosaver-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Aircosaver" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row guarantee-inputs">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Guarantee Expire Date" class="form-control" [disabled]="jenisPekerjaan === 'maintenance'"/>
+    </div>
+  </div>
+  <div class="row unit-price-inputs" *ngIf="jenisPekerjaan === 'pengadaan'">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Unit Price" class="form-control"/>
+    </div>
+  </div>
+  <div class="row unit-price-inputs" *ngIf="jenisPekerjaan === 'maintenance'">
+    <div class="col-sm-6 input-group">
+      <input type="text" placeholder="Price" class="form-control"/>
+    </div>
+  </div>
+</form>

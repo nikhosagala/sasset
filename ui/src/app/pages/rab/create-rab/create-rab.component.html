@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col-lg-9">
+    <nb-card>
+      <nb-card-header>Buat RAB Baru</nb-card-header>
+      <nb-card-body>
+        <form>
+          <div class="row treg-witel-inputs">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="TREG" class="form-control"/>
+            </div>
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="WITEL" class="form-control"/>
+            </div>
+          </div>
+          <div class="row location-inputs">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Gedung" class="form-control"/>
+            </div>
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Lokasi" class="form-control"/>
+            </div>
+          </div>
+          <div class="row pam-electric-info">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Nomor Listrik" class="form-control" disabled/>
+            </div>
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Nomor PAM" class="form-control" disabled/>
+            </div>
+          </div>
+          <div class="row jenis-pekerjaan-inputs">
+            <label class="col-sm-12">Jenis Pekerjaan</label>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="radioPekerjaan"
+                         (click)="chooseJenisPekerjaan(0)">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Pengadaan</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="radioPekerjaan"
+                         (click)="chooseJenisPekerjaan(1)">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Maintenance</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Nomor Akun" class="form-control"/>
+            </div>
+          </div>
+          <div class="row jenis-anggaran-inputs">
+            <label class="col-sm-12">Anggaran</label>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="radioAkun">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">CAPEX</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" name="radioAkun">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">OPEX</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Jenis Asset" class="form-control" matInput
+                     [matAutocomplete]="auto" [formControl]="assetType"/>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="assetTypeSelected()">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+                  {{ option.name }}
+                </mat-option>
+              </mat-autocomplete>
+            </div>
+          </div>
+        </form>
+        <ngx-asset-ac *ngIf="assetType.value === 'AC'" [jenisPekerjaan]="jenisPekerjaan"></ngx-asset-ac>
+      </nb-card-body>
+      <nb-card-footer>
+        <button class="btn btn-success btn-rectangle btn-demo">Save</button>
+        <button class="btn btn-success btn-rectangle btn-demo">Cancel</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>

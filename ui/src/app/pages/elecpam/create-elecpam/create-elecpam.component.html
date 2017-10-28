@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-9">
+    <nb-card>
+      <nb-card-header>Create New Electricity and PAM Data</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="electricForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row form-group treg">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="TREG" class="form-control" formControlName="treg">
+            </div>
+          </div>
+          <div class="row witel">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="WITEL" class="form-control" formControlName="witel">
+            </div>
+          </div>
+          <div class="row idpel">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="ID Pelanggan" class="form-control" formControlName="customerID">
+            </div>
+          </div>
+          <div class="row nama-id">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Nama ID" class="form-control" formControlName="nameID">
+            </div>
+          </div>
+          <div class="row address">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Alamat" class="form-control" formControlName="address">
+            </div>
+          </div>
+          <div class="row tariff">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Tarif" class="form-control" formControlName="outcome">
+            </div>
+          </div>
+          <div class="row power">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Daya" class="form-control" formControlName="power">
+            </div>
+          </div>
+          <div class="row pengelola">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Pengelola" class="form-control" formControlName="administrator">
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <button class="btn btn-success btn-rectangle btn-demo" [disabled]="!electricForm.valid" (click)="onSubmit()">Save</button>
+        <button class="btn btn-success btn-rectangle btn-demo" (click)="clear()">Cancel</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>
