@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# API Docs
+GET           /swagger.json                        controllers.ApiHelpController.getResources
+GET           /docs                                controllers.ApiDocController.api
+
+# Application Controller
+GET           /                                    controllers.Assets.at(path="/public/ui", file="index.html")
+GET           /api/menu                            controllers.DummyController.getMenu
+
+# Asset Controller
+GET           /api/assets.json                     controllers.AssetController.gets(filter:String ?= "", sort:String ?= "", offset:Int ?= 1, limit:Int ?= 0)
+GET           /api/asset/:id                       controllers.AssetController.get(id: Long)
+GET           /api/assetSummary                    controllers.AssetController.getAssetSummary(id: Long ?= 0, assetType:String ?="", offset:Int ?= 1, limit:Int ?= 0)
+GET           /api/assetSummary/:id                controllers.AssetController.getAssetSummary(id: Long, assetType: String ?="", offset:Int ?= 1, limit:Int ?= 0)
+POST          /api/asset/submit                    controllers.AssetController.submit
+PUT           /api/asset/update                    controllers.AssetController.update
+DELETE        /api/asset/delete/:id                controllers.AssetController.delete(id: Long)
+
+# Asset Type
+GET           /api/assetTypes.json                 controllers.AssetTypeController.gets(filter:String ?= "", sort:String ?= "", offset:Int ?= 1, limit:Int ?= 0)
+POST          /api/assetType/submit                controllers.AssetTypeController.submit
+PUT           /api/assetType/update                controllers.AssetTypeController.update
+DELETE        /api/assetType/delete/:id            controllers.AssetTypeController.delete(id: Long)
+
+# TREG Controller
+GET           /api/tregs.json                      controllers.TREGController.gets(filter:String ?= "", sort:String ?= "", offset:Int ?= 1, limit:Int ?= 0)
+POST          /api/treg/submit                     controllers.TREGController.submit
+PUT           /api/treg/update                     controllers.TREGController.update
+DELETE        /api/treg/delete/:id                 controllers.TREGController.delete(id: Long)
+
+# Dummy Controller
+GET           /api/dummy/maintenances.json         controllers.DummyController.getMaintenance
+POST          /api/dummy/maintenance/submit        controllers.DummyController.setMaintenance()
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/images/*file                 controllers.Assets.versioned(path="/public/ui/assets/images", file: Asset)
+GET           /assets/*file                        controllers.Assets.versioned(path="/public", file: Asset)
+GET           /*file                               controllers.Assets.versioned(path="/public/ui", file: Asset)

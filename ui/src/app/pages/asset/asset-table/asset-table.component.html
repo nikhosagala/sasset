@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-header>
+    Data Asset {{assetType}}
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (userRowSelect)="onClickRow($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

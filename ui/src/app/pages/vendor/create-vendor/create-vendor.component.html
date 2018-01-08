@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-9">
+    <nb-card>
+      <nb-card-header>Buat Vendor Baru</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row form-group nama-vendor">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Nama Vendor" class="form-control" formControlName="vendorName">
+            </div>
+          </div>
+          <div class="row jenis-asset">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Jenis Asset" class="form-control" formControlName="assetType">
+            </div>
+          </div>
+          <div class="row lokasi-vendor">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Lokasi" class="form-control" formControlName="location">
+            </div>
+          </div>
+          <div class="row alamat-vendor">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Alamat" class="form-control" formControlName="address">
+            </div>
+          </div>
+          <div class="row norek-vendor">
+            <div class="col-sm-6 input-group">
+              <input type="number" placeholder="Nomor Rekening" class="form-control" formControlName="bankAccountNumber">
+            </div>
+          </div>
+          <div class="row bank-vendor">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Bank" class="form-control" formControlName="bank">
+            </div>
+          </div>
+          <div class="row alamat-bank">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="Alamat Bank" class="form-control" formControlName="bankAddress">
+            </div>
+          </div>
+          <div class="row pic">
+            <div class="col-sm-6 input-group">
+              <input type="text" placeholder="PIC" class="form-control" formControlName="pic">
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+      <nb-card-footer>
+        <button class="btn btn-success btn-rectangle btn-demo" [disabled]="!vendorForm.valid" (click)="onSubmit()">Save</button>
+        <button class="btn btn-success btn-rectangle btn-demo" (click)="clear()">Cancel</button>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>
