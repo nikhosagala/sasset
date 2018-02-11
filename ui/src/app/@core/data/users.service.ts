@@ -8,7 +8,7 @@ let counter = 0;
 export class UserService {
 
   private users = {
-    nikh: {name: 'Nikho Sagala', picture: 'assets/images/alan.png'},
+    nikh: {name: 'Alan Thomson', picture: 'assets/images/alan.png'},
     nick: {name: 'Nick Jones', picture: 'assets/images/nick.png'},
     eva: {name: 'Eva Moor', picture: 'assets/images/eva.png'},
     jack: {name: 'Jack Williams', picture: 'assets/images/jack.png'},
